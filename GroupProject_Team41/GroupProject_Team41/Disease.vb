@@ -3,22 +3,16 @@ Option Explicit On
 Option Infer Off
 Public MustInherit Class Disease
     Private _Name As String  'Redim all the arrays and fix the constructors
-    Private _NumTests() As Integer
-    Private _Population() As Integer
-    Private _NumInfected() As Integer
+    Private _NumTests As Integer
+    Private _Populationnum As Integer
+    Private _NumInfected As Integer
     'rivate _NumSurvived As Integer
-    Private _NumDied() As Integer
+    Private _NumDied As Integer
     Private _TypeOfDisease As String
-    Public Sub New(name As String, nP As Integer, nT As Integer, nA As Integer, nD As Integer, t As String)
+    Public Sub New(name As String, nP As Integer, nT As Integer )
         _Name = name
         _Population = nP
         _NumTests = nT
-        _NumInfected = nA
-        '_NumSurvived = nS
-        _NumDied = nD
-        _TypeOfDisease = t
-
-
     End Sub
     Public Property name() As String
         Get
@@ -29,12 +23,12 @@ Public MustInherit Class Disease
         End Set
     End Property
 
-    Public Property population() As Integer 'modify all the property methods because we changed all attributes to arrays
+    Public Property populationnum() As Integer 'modify all the property methods because we changed all attributes to arrays
         Get
-            Return _Population
+            Return _Populationnum
         End Get
         Set(value As Integer)
-            _Population = value
+            _Populationnum = value
         End Set
     End Property
     Public Property NumTests() As Integer
